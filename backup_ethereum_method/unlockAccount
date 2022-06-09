@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "#!/bin/bash" > unlockaccount
+echo "" >> unlockaccount
+echo "curl --location --request POST 'http://localhost:8545' --header 'Content-type: application/json' --data-raw '{\"jsonrpc\": \"2.0\",\"id\": 6,\"method\": \"personal_unlockAccount\",\"params\": [\"$1\",\"$2\"]}'" >> unlockaccount
+chmod +x unlockaccount
+./unlockaccount

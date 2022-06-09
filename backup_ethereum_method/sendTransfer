@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "#!/bin/bash" > sendtransfer
+echo "" >> sendtransfer
+echo "curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' \
+--data-raw '{\"jsonrpc\": \"2.0\",\"id\": 7,\"method\": \"eth_sendTransaction\",\"params\": [{\"from\": \"$1\",\"to\": \"$2\",\"value\": \"$3\"}]}'" >> sendtransfer
+chmod +x sendtransfer
+./sendtransfer

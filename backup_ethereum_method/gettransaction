@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw '{"jsonrpc": "2.0","id": 8,"method": "eth_getTransactionByHash","params": ["0x5ccbc9b04a93bc64eec58b585cf16cf62cfd98c36beb17c480c48b24fc4fd11f"]}'

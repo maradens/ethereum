@@ -1,0 +1,10 @@
+#!/bin/bash
+
+str1="Hello Bash"
+str2="Hello Bash"
+
+if [ "$1" == "ether" ]; then
+    echo "Strings is ether"
+else
+    echo "Strings are not ether"
+fi

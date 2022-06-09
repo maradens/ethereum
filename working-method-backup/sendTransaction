@@ -1,0 +1,3 @@
+#!/bin/bash
+
+eval $(echo "curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw '{\"jsonrpc\": \"2.0\",\"id\": 7,\"method\": \"eth_sendTransaction\",\"params\": [{\"from\": \"$1\",\"to\": \"$2\",\"value\": \"$3\"}]}'") 

@@ -1,0 +1,231 @@
+docker run -d -p 3000:3000 -e WS_SECRET=<YOUR_SECRET> kamael/eth-netstats
+
+https://hub.docker.com/r/kamael/eth-netstats
+
+eth.sendTransaction({from:'0x7b779fce5e95421ccc36fb7251a47135db48dcf8', to:'0x2bBDB902774d37a0e24423bBe0aAf7cEeFfaaF14', value: web3.toWei(2500, "ether"), gas:21000});
+
+eth.sendTransaction({from:'fromAddress', to:'toAddress', value: web3.toWei(2500, "ether"), gas:21000});
+
+#CHECK nodes connectivity
+curl --location --request POST 'localhost:8545' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "admin_peers",
+    "params": []
+}'
+
+#GET the last block
+curl --location --request POST 'localhost:8545' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "eth_blockNumber",
+    "params": []
+}'
+
+#GET address primary account
+curl --location --request POST 'localhost:8545' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "eth_accounts",
+    "params": []
+}'
+
+#GET current balance
+curl --location --request POST 'localhost:8545' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "eth_getBalance",
+    "params": [
+        "0xe04bdc84194e37b4d961d4b1a83402105a4ddd0e",
+        "latest"
+    ]
+}'
+
+#GET transaction
+curl --location --request POST 'localhost:8545' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 8,
+    "method": "eth_getTransactionByHash",
+    "params": [        "0xa96de080dfcb9c5f908528b92d3df55a0e230cf4e48ae178bb220862c2a544c7"
+    ]
+}'
+
+
+echo "curl --location --request POST 'http://localhost:8545' --header 'Content-type: application/json' --data-raw '{\"jsonrpc\": \"2.0\",\"id\": 6,\"method\": \"personal_unlockAccount\",\"params\": [\"$1\",\"r4h4si4\"]}'" >> unlockaccount
+chmod +x unlockaccount
+./unlockaccount
+
+
+curl --location --request POST 'http://localhost:8545' --header 'Content-type: application/json' --data-raw '{jsonrpc: 2.0,id: 6,method: personal_unlockAccount,params: ["0x132b5b1e508dffbf4cf7836d00966f5d020346f3","r4h4si4"]}'
+
+
+echo "#!/bin/bash" > unlockaccount
+echo "" >> unlockaccount
+
+echo "curl --location --request POST 'http://localhost:8545' --header 'Content-type: application/json' --data-raw '{"jsonrpc": "2.0","id": 6,"method": "personal_unlockAccount","params": [\"$1\",\"r4h4si4\"]}'" >> unlockaccount
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+echo "--location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw '{\"jsonrpc\": \"2.0\",\"id\": 4,\"method\": \"eth_getBalance\",\"params\": [\"$var1\",\"latest\"]}'"
+
+
+
+$(echo "curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw '{\"jsonrpc\": \"2.0\",\"id\": 4,\"method\": \"eth_getBalance\",\"params\": [\"$var1\",\"latest\"]}'")
+
+curl {$(echo "--location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw '{\"jsonrpc\": \"2.0\",\"id\": 4,\"method\": \"eth_getBalance\",\"params\": [\"$var1\",\"latest\"]}'")}
+
+
+echo "--location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw '{\"jsonrpc\": \"2.0\",\"id\": 4,\"method\": \"eth_getBalance\",\"params\": [\"$var1\",\"latest\"]}'"
+
+echo "--location --request POST \'localhost:8545\' --header \'Content-Type: application/json\' --data-raw \'{\"jsonrpc\": \"2.0\",\"id\": 4,\"method\": \"eth_getBalance\",\"params\": [\"$var1\",\"latest\"]}\'"
+
+curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw '{"jsonrpc": "2.0","id": 4,"method": "eth_getBalance","params": [\"$var1\","latest"]}'
+
+
+
+curl --location --request POST \'localhost:8545\' --header \'Content-Type: application/json\' --data-raw \'\{\"jsonrpc\": \"2.0\",\"id\": 4,\"method\": \"eth_getBalance\",\"params\": [\"$var1\",\"latest\"]\}\'
+
+curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw '{"jsonrpc": "2.0","id": 4,"method": "eth_getBalance","params": ["0xe04bdc84194e37b4d961d4b1a83402105a4ddd0e","latest"]}'
+
+echo $(curl {--location --request POST \'localhost:8545\' --header \'Content-Type: application/json\' --data-raw \'\{\"jsonrpc\": \"2.0\",\"id\": 4,\"method\": \"eth_getBalance\",\"params\": [\"$var1\",\"latest\"]\}\'})
+
+echo ""curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw \'{"jsonrpc": "2.0","id": 4,"method": "eth_getBalance","params": [""
+
+"$var1","latest"]}'
+
+
+curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw '{"jsonrpc": "2.0","id": 4,"method": "eth_getBalance","params": ["0xe04bdc84194e37b4d961d4b1a83402105a4ddd0e","latest"]}'
+
+
+echo "curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw \'{"jsonrpc": "2.0","id": 4,"method": "eth_getBalance","params": ["" "\"$var1\""\,\"latest\"]}\'
+
+curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw \'{"jsonrpc": "2.0","id": 4,"method": "eth_getBalance","params": ["" "\"$var1\""\,\"latest\"]}\'
+
+
+
+echo ""curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw \'{"jsonrpc": "2.0","id": 4,"method": "eth_getBalance","params": ["" "\"$var1\""\,\"latest\"]}\'
+
+echo $(""curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw \'{"jsonrpc": "2.0","id": 4,"method": "eth_getBalance","params": ["" "\"$var1\""\,\"latest\"]}\')
+
+
+
+#CREATE new account
+curl --location --request POST 'http://localhost:8545' \
+--header 'Content-type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 5,
+    "method": "personal_newAccount",
+    "params": [
+        "r4h4si4"
+    ]
+}'
+
+
+curl --location --request POST 'localhost:8545' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "admin_peers",
+    "params": []
+}'
+
+
+curl --location --request POST 'localhost:8545' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "eth_blockNumber",
+    "params": []
+}'
+
+#get balance from main account
+curl --location --request POST 'localhost:8545' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "eth_getBalance",
+    "params": [
+        "0xe04bdc84194e37b4d961d4b1a83402105a4ddd0e",
+        "latest"
+    ]
+}'
+
+curl --location --request POST 'localhost:8545' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "eth_getBalance",
+    "params": [
+        "0xa6449373f1fc2a4f450df5660f08722867fe5978",
+        "latest"
+    ]
+}'
+
+
+#check unlock account
+curl --location --request POST 'http://localhost:8545' \
+--header 'Content-type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 6,
+    "method": "personal_unlockAccount",
+    "params": [
+        "0xe04bdc84194e37b4d961d4b1a83402105a4ddd0e",
+        "5uper53cr3t"
+    ]
+}'
+
+#transfer fund
+curl --location --request POST 'localhost:8545' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 7,
+    "method": "eth_sendTransaction",
+    "params": [
+        {
+            "from": "0xe04bdc84194e37b4d961d4b1a83402105a4ddd0e",
+            "to": "0xa6449373f1fc2a4f450df5660f08722867fe5978",
+            "value": "0x45104d3a0f07a7fda3"
+        }
+    ]
+}'
+
+curl --location --request POST 'localhost:8545' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "jsonrpc": "2.0",
+    "id": 8,
+    "method": "eth_getTransactionByHash",
+    "params": [        "0x6f50bc68943a46e21c6275684aadc967392f55d9458ac9ae68c68e1aa58f5141"
+    ]
+}'
+
+

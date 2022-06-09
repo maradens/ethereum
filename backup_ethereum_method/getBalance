@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#GET current balance
+#curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw '{"jsonrpc": "2.0","id": 4,"method": "eth_getBalance","params": ["$1","latest"]}'
+
+echo "#!/bin/bash" > getbalance
+echo "" >> getbalance
+echo "curl --location --request POST 'localhost:8545' --header 'Content-Type: application/json' --data-raw '{\"jsonrpc\": \"2.0\",\"id\": 4,\"method\": \"eth_getBalance\",\"params\": [\"$1\",\"latest\"]}'" >>  getbalance
+chmod +x getbalance
+./getbalance
